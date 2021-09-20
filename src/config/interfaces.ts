@@ -1,10 +1,10 @@
 import { Request, ResponseToolkit } from '@hapi/hapi'
 import { Server } from '@hapi/hapi'
-
 export interface iroute {
     method: String | String[],
     path: String,
-    handler(request: Request, h: ResponseToolkit): any
+    handler(request: Request, h: ResponseToolkit): any,
+    options?: object
 }
 
 export interface iplugin {
