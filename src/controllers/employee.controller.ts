@@ -1,28 +1,23 @@
-import { Request, ResponseToolkit } from "@hapi/hapi";
-import response from "../utils/response";
-import { allEmployeesDetails, AddEmployee } from "../services/employee.service";
-import { Employee } from "../types/employee";
+import { Request, ResponseToolkit } from '@hapi/hapi';
+import response from '../utils/response';
+import { allEmployeesDetails, AddEmployee } from '../services/employee.service';
+import { Employee } from '../types/employee';
 
-const employeeController = async (
-  request: Request,
-  h: ResponseToolkit
-): Promise<any> => {
+const employeeController = async (request: Request, h: ResponseToolkit): Promise<any> => {
   switch (request.method) {
-    case "get": {
-      const allEmployees = await allEmployeesDetails().then(
-        (results) => results
-      );
+    case 'get': {
+      const allEmployees = await allEmployeesDetails().then((results) => results);
       return h.response(response(200, allEmployees));
     }
-    case "post": {
+    case 'post': {
       const results: any = await AddEmployee(request.payload as Employee).then(
         (result) => result,
-        (error) => error
+        (error) => error,
       );
       return h.response(response(results.errno ? 500 : 200, results));
     }
     default:
-      return h.response(response(404, "Not found"));
+      return h.response(response(404, 'Not found'));
   }
 };
 

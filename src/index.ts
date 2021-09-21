@@ -1,10 +1,10 @@
-import { Server, ServerOptions } from "@hapi/hapi";
-import config from "./config";
-import routes from "./routes";
-import plugins from "./config/plugins";
+import { Server, ServerOptions } from '@hapi/hapi';
+// import config from './config';
+import routes from './routes';
+import plugins from './config/plugins';
 
 const options: ServerOptions = {
-  port: config.port,
+  port: '', // config.port,
 };
 
 const server = new Server(options);

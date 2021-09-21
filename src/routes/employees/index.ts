@@ -1,24 +1,24 @@
-import { iroute } from "../../config/interfaces";
-import { employeeController } from "../../controllers/employee.controller";
+import { Route } from '../../config/interfaces';
+import employeeController from '../../controllers/employee.controller';
 
-const route: Array<iroute> = [
+const route: Array<Route> = [
   {
-    path: "/employee",
-    method: "GET",
+    path: '/employee',
+    method: 'GET',
     handler: employeeController,
     options: {
-      tags: ["api"],
-      description: "get, all employees that have been captured in the system",
-      notes: "Returns an array of employees",
+      tags: ['api'],
+      description: 'get, all employees that have been captured in the system',
+      notes: 'Returns an array of employees',
     },
   },
   {
-    path: "/employee",
-    method: "POST",
+    path: '/employee',
+    method: 'POST',
     handler: employeeController,
     options: {
-      tags: ["api"],
-      description: "post, create an employee to stored in the database",
+      tags: ['api'],
+      description: 'post, create an employee to stored in the database',
       notes: `Request body, an example below
 
             {

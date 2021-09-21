@@ -1,13 +1,13 @@
-import { Request, ResponseToolkit, Server } from "@hapi/hapi";
+import { Request, ResponseToolkit, Server } from '@hapi/hapi';
 
-export interface iroute {
+export interface Route {
   method: String | String[];
   path: String;
   handler(request: Request, h: ResponseToolkit): any;
   options?: object;
 }
 
-export interface iplugin {
+export interface Plugin {
   name: String;
   version?: String;
   register(server: Server, options: any): void;

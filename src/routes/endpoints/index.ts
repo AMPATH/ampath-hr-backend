@@ -1,9 +1,9 @@
-import { iroute } from "../../config/interfaces";
-import indexController from "../../controllers/index.controller";
+import { Route } from '../../config/interfaces';
+import indexController from '../../controllers/index.controller';
 
-const route: iroute = {
-  path: "/",
-  method: "GET",
+const route: Route = {
+  path: '/',
+  method: 'GET',
   handler: indexController,
 };
 
