@@ -1,7 +1,7 @@
-import console from './console.event'
+import console from './console.event';
 
 export default [
-    {
-        plugin: console
-    }
-]
+  {
+    plugin: console,
+  },
+];

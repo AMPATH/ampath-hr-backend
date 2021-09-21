@@ -19,6 +19,7 @@ jobs:
           node-version: "14.x"
       - run: npm install
       - run: npm run test --passWithNoTests 
+      - run: npm run lint
       - run: npm run build
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2

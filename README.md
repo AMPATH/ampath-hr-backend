@@ -17,9 +17,9 @@ This is Ampath HR Back end
 
 1. Clone the repo and install dependencies
 
-    1. Add Config files for the database connection by creating a file `index.ts` in `src/config/index.ts` populate the file as below
-    2. Uncomment config properties on `connection.ts` file [here](/src/connection/connection.ts)
-    3. Uncomment config on `index.ts` [here](src/index.ts)
+    - add config files for the database connection by creating a file `index.ts` in `src/config/index.ts` populate the file as below
+    - uncomment config properties on `connection.ts` file [here](/src/connection/connection.ts)
+    - uncomment config on `index.ts` [here](src/index.ts)
 
         ```sh 
         export default {
@@ -40,6 +40,10 @@ To start the server
 
  ```
 
- server should by default be running [http://localhost:3000](http://localhost:3000)
+    -   API endpoint base URL http://localhost:3000
+
+ 2. Documentation
+
+    -   Documentation runs on [http://localhost:3000/documentation](http://localhost:3000/documentation)
 
 

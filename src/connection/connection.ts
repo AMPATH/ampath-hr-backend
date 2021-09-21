@@ -1,14 +1,13 @@
-"use strict";
+import config from '../config/index';
 
-// import config from '../config/index';
+const mysql = require('mysql');
 
-const mysql = require("mysql");
 const pool = mysql.createPool({
-  // connectionLimit: config.mysql.connectionLimit,
-  // host: config.mysql.host,
-  // user: config.mysql.user,
-  // password: config.mysql.password,
-  // database: config.mysql.database,
+  connectionLimit: config.mysql.connectionLimit,
+  host: config.mysql.host,
+  user: config.mysql.user,
+  password: config.mysql.password,
+  database: config.mysql.database,
 });
 
 // Connect to Data Base
@@ -18,7 +17,7 @@ function dbConnection() {
   });
 }
 const serviceDef = {
-  dbConnection: dbConnection,
+  dbConnection,
 };
 
 export default serviceDef;
