@@ -1,15 +1,19 @@
 {
-  "name": "hapi-typescript-boilerplate",
+  "name": "@ampath/hapi-hr-backend",
   "version": "1.0.0",
-  "description": "Scalable and delightful way to write #hapijs app with #typescript #hapily",
-  "bugs": "https://github.com/nomadovoip/hapi-typescript-boilerplate/issues",
-  "homepage": "https://www.nomado.eu",
+  "description": "Ampath HR Management and tracking Module backend",
+  "bugs": "https://github.com/AMPATH/ampath-hr-backend/issues",
   "main": "main.ts",
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "start": "nodemon",
     "test": "jest",
-    "test:watch": "jest --watchAll --coverage"
+    "test:watch": "jest --watchAll --coverage",
+    "lint": "eslint src --ext ts",
+    "prettier": "prettier --config .prettierrc.json --write \"src/**/*.ts\""
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "keywords": [
     "boilerplate",
@@ -20,11 +24,11 @@
     "docker swarm",
     "gitlab"
   ],
-  "author": "Asad Rizvi <alex@nomado.eu> (https://www.linkedin.com/in/aleyrizvi/)",
+  "author": "Ampath Dev team",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nomadovoip/hapi-typescript-boilerplate"
+    "url": "https://github.com/AMPATH/ampath-hr-backend/issues"
   },
   "dependencies": {
     "@hapi/boom": "^9.0.0",
@@ -47,9 +51,19 @@
     "@types/jest": "^24.9.0",
     "@types/node": "^13.1.8",
     "@types/webpack": "^4.41.2",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
     "concurrently": "^5.0.2",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.24.2",
+    "husky": "^7.0.2",
     "jest": "^24.9.0",
+    "lint-staged": "^11.1.2",
     "nodemon": "^2.0.2",
+    "prettier": "2.4.1",
     "ts-jest": "^24.3.0",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.2",
