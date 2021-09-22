@@ -1,6 +1,6 @@
 
 import { Route } from '../../config/interfaces';
-import { programController } from '../../controllers/program.controller';
+import programController from '../../controllers/program.controller';
 
 const route: Route = {
     path: '/program',

@@ -3,7 +3,7 @@ import serviceDef from '../connection/connection';
 
 
 
-export function Counties() {
+function Counties() {
     return new Promise((resolve, reject) => {
 
         serviceDef.dbConnection()
@@ -16,4 +16,4 @@ export function Counties() {
             });
     });
 }
-const countyDef = { Budgets: Counties };
+export default Counties;

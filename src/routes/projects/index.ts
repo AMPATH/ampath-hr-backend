@@ -1,4 +1,4 @@
-import { projectController } from '../../controllers/project.controller';
+import projectController from '../../controllers/project.controller';
 import { Route } from '../../config/interfaces';
 
 

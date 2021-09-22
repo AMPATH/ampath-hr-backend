@@ -6,14 +6,23 @@ import departmentRoute from './departments';
 import programRoute from './programs';
 import projectRoute from './projects';
 import siteRoute from './sites';
+import movementRoute from './employeeMovement';
+import registerRoute from './user';
+import timesheetRoute from './timesheets';
+import reportRoute from './reports';
 
 export default [].concat(
     indexRoute,
-    ...employeeRoute,
     budgetRoute,
     countyRoute,
     departmentRoute,
     programRoute,
     projectRoute,
-    siteRoute
+    siteRoute,
+    movementRoute,
+    reportRoute,
+    ...employeeRoute,
+    ...registerRoute,
+    ...timesheetRoute
+
 )

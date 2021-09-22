@@ -1,4 +1,4 @@
-import { countyController } from '../../controllers/county.controller';
+import countyController from '../../controllers/county.controller';
 import { Route } from '../../config/interfaces';
 
 

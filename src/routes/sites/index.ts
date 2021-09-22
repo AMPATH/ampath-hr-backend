@@ -1,4 +1,4 @@
-import { siteController } from '../../controllers/site.controller';
+import siteController from '../../controllers/site.controller';
 import { Route } from '../../config/interfaces';
 
 

@@ -1,5 +1,5 @@
 import { Route } from '../../config/interfaces';
-import { budgetController } from '../../controllers/budget.controller'
+import budgetController from '../../controllers/budget.controller'
 
 
 const route: Route = {

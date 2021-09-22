@@ -1,5 +1,5 @@
 import { Route } from '../../config/interfaces';
-import { departmentController } from '../../controllers/department.controller';
+import departmentController from '../../controllers/department.controller';
 
 
 const route: Route = {

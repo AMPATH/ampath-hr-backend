@@ -3,7 +3,7 @@ import serviceDef from '../connection/connection';
 
 
 
-export function Sites() {
+function Sites() {
     return new Promise((resolve, reject) => {
 
         serviceDef.dbConnection()
@@ -16,4 +16,4 @@ export function Sites() {
             });
     });
 }
-const siteDef = { Sites };
+export default Sites;

@@ -10,7 +10,7 @@ export interface Employee {
     kraPin: string;
     nssf: number;
     nhif: number;
-    pfNumber: string;
+    pfNumber: Number;
     salutation: string;
 }
 
@@ -41,6 +41,25 @@ export interface EmployeeUpdate {
     kraPin: string;
     nssf: number;
     nhif: number;
-    pfNumber: string;
+    pfNumber: Number;
     salutation: string;
+}
+export interface TimesheetsUpdate {
+    pfNumber: Number;
+    month: string;
+    upload: string;
+}
+export interface FindReport {
+    department: Number;
+    site: Number;
+    project: Number;
+    county: Number;
+    budget: number;
+    program: Number;
+    Empstatus: string;
+}
+export interface UserDetails {
+    userName: string;
+    email: string;
+    password: string;
 }

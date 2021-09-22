@@ -1,9 +1,10 @@
 /* eslint-disable import/prefer-default-export */
+import { EOPNOTSUPP } from 'constants';
 import serviceDef from '../connection/connection';
 
 
 
-export function Programs() {
+function Programs() {
     return new Promise((resolve, reject) => {
 
         serviceDef.dbConnection()
@@ -16,4 +17,4 @@ export function Programs() {
             });
     });
 }
-const programDef = { Programs };
+export default Programs;

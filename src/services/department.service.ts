@@ -3,7 +3,7 @@ import serviceDef from '../connection/connection';
 
 
 
-export function Departments() {
+function Departments() {
     return new Promise((resolve, reject) => {
 
         serviceDef.dbConnection()
@@ -16,4 +16,4 @@ export function Departments() {
             });
     });
 }
-const departmentDef = { Departments };
+export default Departments;

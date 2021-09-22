@@ -1,5 +1,6 @@
 import { Route } from '../../config/interfaces';
 import employeeController from '../../controllers/employee.controller';
+import searchController from '../../controllers/search.controller';
 
 const route: Array<Route> = [
   {
@@ -38,6 +39,44 @@ const route: Array<Route> = [
                 "salutation": "Mr."
             }
             `,
+    },
+  },
+  {
+    path: '/employee',
+    method: 'PUT',
+    handler: employeeController,
+    options: {
+      tags: ['api'],
+      description: 'put, edit an employee stored in the database',
+      notes: `Request body, an example below
+
+            {
+                "firstName": "test-firstName",
+                "middleName": "test-middleName",
+                "lastName": "test-lastName",
+                "idNumber": "78955",
+                "dob": "1990-01-04T21:00:00.000Z",
+                "age": 50,
+                "telephone": "0722000000",
+                "email": "test@example.com",
+                "gender": "Male",
+                "kraPin": "A001KRAPIN",
+                "nssf": 565656,
+                "nhif": 5454548,
+                "pfNumber": 1256534,
+                "salutation": "Mr."
+            }
+            `,
+    },
+  },
+  {
+    path: '/search',
+    method: 'GET',
+    handler: searchController,
+    options: {
+      tags: ['api'],
+      description: 'get, one employee as per the PfNumber as captured in the system',
+      notes: 'Returns one Employee',
     },
   },
 ];
