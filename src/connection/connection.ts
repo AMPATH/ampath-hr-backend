@@ -1,8 +1,7 @@
-"use strict";
-
 // import config from '../config/index';
 
-const mysql = require("mysql");
+const mysql = require('mysql');
+
 const pool = mysql.createPool({
   // connectionLimit: config.mysql.connectionLimit,
   // host: config.mysql.host,
@@ -18,7 +17,7 @@ function dbConnection() {
   });
 }
 const serviceDef = {
-  dbConnection: dbConnection,
+  dbConnection,
 };
 
 export default serviceDef;

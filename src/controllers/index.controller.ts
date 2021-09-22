@@ -1,22 +1,10 @@
-import {Request, ResponseToolkit} from '@hapi/hapi'
-import response from '../utils/response'
-import { Boom } from '@hapi/boom'
-import Podium from '@hapi/podium'
-
+import { Request, ResponseToolkit } from '@hapi/hapi';
+import response from '../utils/response';
 
 export default async (request: Request, h: ResponseToolkit): Promise<any> => {
+  const payload = response(200, {
+    message: 'Ampath HR Backend, API is working',
+  });
 
-    let payload = response(
-        200,
-        {
-            message: "Hello #hapi.js from #Typescript!"
-        }
-    )
-    
-    const emitter = request.server.app['emitter']
-
-    emitter.emit('index.route', "Index route!")
-
-    return h.response(payload)
-
-}
+  return h.response(payload);
+};
