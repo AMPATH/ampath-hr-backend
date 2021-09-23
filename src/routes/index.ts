@@ -12,17 +12,16 @@ import timesheetRoute from './timesheets';
 import reportRoute from './reports';
 
 export default [].concat(
-    indexRoute,
-    budgetRoute,
-    countyRoute,
-    departmentRoute,
-    programRoute,
-    projectRoute,
-    siteRoute,
-    movementRoute,
-    reportRoute,
-    ...employeeRoute,
-    ...registerRoute,
-    ...timesheetRoute
-
-)
+  indexRoute,
+  budgetRoute,
+  countyRoute,
+  departmentRoute,
+  programRoute,
+  projectRoute,
+  siteRoute,
+  movementRoute,
+  reportRoute,
+  ...employeeRoute,
+  ...registerRoute,
+  ...timesheetRoute,
+);

@@ -13,8 +13,7 @@ export function GetTimesheets(pfNumber): Promise<any> {
 }
 
 export function AddTimesheets(timesheet: TimesheetsUpdate) {
-  const {
-    pfNumber, month, upload } = timesheet;
+  const { pfNumber, month, upload } = timesheet;
   // eslint-disable-next-line max-len
   const sql = `INSERT INTO Timesheets (pfNumber, month, upload) VALUES ('${pfNumber}', '${month}', '${upload}')`;
   return new Promise((resolve, reject) => {

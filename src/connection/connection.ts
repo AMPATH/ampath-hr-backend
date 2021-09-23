@@ -1,4 +1,4 @@
-import config from '../config/index';
+// import config from '../config/index';
 
 const mysql = require('mysql');
 

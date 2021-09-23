@@ -2,7 +2,7 @@ import { UserDetails } from '../types/employee';
 import serviceDef from '../connection/connection';
 
 export function GetUser(userName): Promise<any> {
-  const sql = `SELECT * FROM User WHERE userName = '${userName}'`
+  const sql = `SELECT * FROM User WHERE userName = '${userName}'`;
   return new Promise((resolve, reject) => {
     serviceDef.dbConnection().then((pool: any) => {
       pool.query(sql, (error, results, fields) => {
@@ -26,4 +26,3 @@ export function AddUser(user: UserDetails) {
     });
   });
 }
-

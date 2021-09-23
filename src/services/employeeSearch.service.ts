@@ -19,7 +19,7 @@ function GetEmployee(pfNumber): Promise<any> {
   join Budget B on ET.countyBudget = B.budgetId
   join Program Prog on ET.programArea = Prog.programId
   join Project P on ET.project = P.projectId
-  where E.pfNumber = '${pfNumber}' order by ET.trackingId desc limit 1 `
+  where E.pfNumber = '${pfNumber}' order by ET.trackingId desc limit 1 `;
   return new Promise((resolve, reject) => {
     serviceDef.dbConnection().then((pool: any) => {
       pool.query(sql, (error, results, fields) => {
@@ -29,5 +29,4 @@ function GetEmployee(pfNumber): Promise<any> {
     });
   });
 }
-export default GetEmployee
-
+export default GetEmployee;
