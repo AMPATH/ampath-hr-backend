@@ -1,6 +1,14 @@
 import serviceDef from '../connection/connection';
 
-function Reports(department, project, site, budget, county, Empstatus, program) {
+function Reports(
+  department: string | null,
+  project: string | null,
+  site: string | null,
+  budget: string | null,
+  county: string | null,
+  Empstatus: string | null,
+  program: string | null,
+) {
   const sql = `select E.pfNumber, E.firstName, E.middleName, E.lastName,
     ER.contractStatus as "Employee Status", C.name as County, B.name as Budget,
     Prog.name as "Program Area", P.name as Project,
