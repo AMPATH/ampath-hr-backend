@@ -50,12 +50,12 @@ export interface TimesheetsUpdate {
   upload: string;
 }
 export interface FindReport {
-  department: Number;
-  site: Number;
-  project: Number;
-  county: Number;
-  budget: number;
-  program: Number;
+  department: string;
+  site: string;
+  project: string;
+  county: string;
+  budget: string;
+  program: string;
   Empstatus: string;
 }
 export interface UserDetails {
