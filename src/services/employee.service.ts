@@ -1,5 +1,5 @@
 import serviceDef from '../connection/connection';
-import { Employee, EmployeeMovements, EmployeeUpdate } from '../types/employee';
+import { Employee, EmployeeUpdate } from '../types/employee';
 
 export function allEmployeesDetails(): Promise<any> {
   return new Promise((resolve, reject) => {
