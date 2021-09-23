@@ -1,10 +1,12 @@
 import { Server, ServerOptions } from '@hapi/hapi';
-// import config from './config';
+import * as dotenv from 'dotenv';
 import routes from './routes';
 import plugins from './config/plugins';
 
+dotenv.config();
+
 const options: ServerOptions = {
-  port: '', // config.port,
+  port: process.env.PORT || 3000,
 };
 
 const server = new Server(options);
