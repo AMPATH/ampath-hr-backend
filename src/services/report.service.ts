@@ -9,10 +9,11 @@ function Reports(
   Empstatus: string | null,
   program: string | null,
 ) {
-  const sql = `select E.pfNumber, E.firstName, E.middleName, E.lastName,
-    ER.contractStatus as "Employee Status", C.name as County, B.name as Budget,
-    Prog.name as "Program Area", P.name as Project,
-    date_format(ER.endOfContract, "%Y-%m-%d") as ContractPeriod, D.name as Department, S.name as Site
+  const sql = `select ER.trackingId, E.pfNumber, E.firstName, E.middleName, E.lastName,
+    ER.contractStatus as "employeeStatus", C.name as county, B.name as budget,
+    Prog.name as "programArea", P.name as Project,
+    date_format(ER.endOfContract, "%Y-%m-%d") as contractPeriod,
+    D.name as department, S.name as site
     from Employees E
     join Employee_Tracking ER on E.pfNumber = ER.pfNumber
     join Department D on ER.department = D.departmentId

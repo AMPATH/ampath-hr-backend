@@ -1,8 +1,8 @@
 import { UserDetails } from '../types/employee';
 import serviceDef from '../connection/connection';
 
-export function GetUser(userName): Promise<any> {
-  const sql = `SELECT * FROM User WHERE userName = '${userName}'`;
+export function GetUser(userName, password): Promise<any> {
+  const sql = `SELECT * FROM User WHERE userName = '${userName}' AND password = '${password}'`;
   return new Promise((resolve, reject) => {
     serviceDef.dbConnection().then((pool: any) => {
       pool.query(sql, (error, results, fields) => {
