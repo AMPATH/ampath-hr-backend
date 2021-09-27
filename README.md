@@ -17,26 +17,20 @@ This is Ampath HR Back end
 
 1. Clone the repo and install dependencies
 
-    - add config files for the database connection by creating a file `index.ts` in `src/config/index.ts` populate the file as below
-    - uncomment config properties on `connection.ts` file [here](/src/connection/connection.ts)
-    - uncomment config on `index.ts` [here](src/index.ts)
+    - Add `.env` file and add the required configurations, an example is provided below
 
         ```sh 
-        export default {
-            port: process.env.PORT || 3000,
-            mysql: {
-                connectionLimit: ,
-                host: "",
-                user: "",
-                password: "",
-                database: ""
-            }
-        }
+            HOST=
+            USER=
+            PASSWORD=
+            DATABASE=
+            CONNECTION_LIMIT=
+            PORT=
         ```
 
 To start the server
 ```
- yarn start or npm start
+ npm start
 
  ```
 

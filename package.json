@@ -37,6 +37,7 @@
     "@hapi/joi": "^17.0.2",
     "@hapi/podium": "^4.0.0",
     "@hapi/vision": "^6.1.0",
+    "dotenv": "^10.0.0",
     "hapi-swagger": "^14.2.4",
     "hapi-swaggered": "^3.1.0",
     "hapi-swaggered-ui": "^3.0.2",
@@ -73,6 +74,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "engines": {
-    "node": ">= 12"
+    "node": ">= 12",
+    "yarn": "use npm to install dependencies"
   }
 }
