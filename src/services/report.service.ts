@@ -11,7 +11,7 @@ function Reports(
 ) {
   const sql = `select ER.trackingId, E.pfNumber, E.firstName, E.middleName, E.lastName,
     ER.contractStatus as "employeeStatus", C.name as county, B.name as budget,
-    Prog.name as "programArea", P.name as Project,
+    Prog.name as "programArea", P.name as project, ER.date as trackingDate,
     date_format(ER.endOfContract, "%Y-%m-%d") as contractPeriod,
     D.name as department, S.name as site
     from Employees E

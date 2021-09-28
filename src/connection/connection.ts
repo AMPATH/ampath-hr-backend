@@ -1,13 +1,15 @@
-// import config from '../config/index';
+import * as dotenv from 'dotenv';
 
+dotenv.config();
 const mysql = require('mysql');
 
+
 const pool = mysql.createPool({
-  // connectionLimit: config.mysql.connectionLimit,
-  // host: config.mysql.host,
-  // user: config.mysql.user,
-  // password: config.mysql.password,
-  // database: config.mysql.database,
+  connectionLimit: process.env.CONNECTION_LIMIT,
+  host: process.env.HOST,
+  user: process.env.USER_NAME,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE
 });
 
 // Connect to Data Base
