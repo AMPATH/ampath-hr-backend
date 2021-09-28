@@ -9,7 +9,7 @@ const timesheetController = async (request: Request, h: ResponseToolkit): Promis
   switch (request.method) {
     case 'get': {
       const timesheets = await GetTimesheets(pfNumber).then((results) => results);
-      return h.response(response(200, timesheets));
+      return h.response(response(!timesheets.length ? 500 : 200, timesheets));
     }
 
     case 'post': {

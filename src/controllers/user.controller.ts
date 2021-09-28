@@ -5,10 +5,11 @@ import { AddUser, GetUser } from '../services/user.service';
 
 const userController = async (request: Request, h: ResponseToolkit): Promise<any> => {
   const userName = request.query.user;
+  const pass = request.query.password
   switch (request.method) {
     case 'get': {
-      const user = await GetUser(userName).then((results) => results);
-      return h.response(response(200, user));
+      const user = await GetUser(userName, pass).then((results) => results);
+      return h.response(response(!user.length ? 500 : 200, user));
     }
     case 'post': {
       const update: any = await AddUser(request.payload as UserDetails).then(
