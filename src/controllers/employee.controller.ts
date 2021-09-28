@@ -7,7 +7,7 @@ const employeeController = async (request: Request, h: ResponseToolkit): Promise
   switch (request.method) {
     case 'get': {
       const allEmployees = await allEmployeesDetails().then((results) => results);
-      return h.response(response(200, allEmployees));
+      return h.response(response(!allEmployees.length ? 500 : 200, allEmployees));
     }
     case 'put': {
       const update: any = await UpdateEmployee(request.payload as EmployeeUpdate).then(

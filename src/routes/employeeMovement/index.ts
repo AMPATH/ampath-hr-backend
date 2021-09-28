@@ -1,7 +1,18 @@
 import employeeMovementController from '../../controllers/employeeMovement.controller';
 import { Route } from '../../config/interfaces';
 
-const route: Route = {
+const route: Array<Route> = [
+  {
+    path: '/movement',
+    method: 'GET',
+    handler: employeeMovementController,
+    options: {
+      tags: ['api'],
+      description: 'get, all employees that have been captured in the system',
+      notes: 'Returns an array of employees',
+    },
+  },
+  {
   path: '/movement',
   method: 'POST',
   handler: employeeMovementController,
@@ -27,6 +38,6 @@ const route: Route = {
     }
             `,
   },
-};
+}];
 
 export default route;

@@ -21,7 +21,7 @@ This is Ampath HR Back end
 
         ```sh 
             HOST=
-            USER=
+            USER_NAME=
             PASSWORD=
             DATABASE=
             CONNECTION_LIMIT=
