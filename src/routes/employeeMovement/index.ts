@@ -8,7 +8,7 @@ const route: Array<Route> = [
     handler: employeeMovementController,
     options: {
       tags: ['api'],
-      description: 'get, all employees that have been captured in the system',
+      description: 'get, latest movements of all employees that have been captured in the system',
       notes: 'Returns an array of employees',
     },
   },
