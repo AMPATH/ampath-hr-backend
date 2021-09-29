@@ -8,3 +8,5 @@ coverage
 src/config/index.ts
 
 .env
+
+uploads
