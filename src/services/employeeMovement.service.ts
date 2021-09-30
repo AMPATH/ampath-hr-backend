@@ -17,7 +17,7 @@ export function recentMovement(): Promise<any> {
       join County C on ER.county = C.countyId
       join Budget B on ER.countyBudget = B.budgetId
       join Program Prog on ER.programArea = Prog.programId
-      join Project P on ER.project = P.projectId`, (error, results, fields) => {
+      join Project P on ER.project = P.projectId group by pfNumber desc`, (error, results, fields) => {
         if (error) reject(error);
         resolve(results);
       });
