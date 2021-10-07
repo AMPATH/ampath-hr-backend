@@ -5,6 +5,9 @@ const route: Route = {
   path: '/program',
   method: 'GET',
   handler: programController,
+  options: {
+    auth: 'simple',
+  }
 };
 
 export default route;

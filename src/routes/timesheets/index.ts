@@ -7,6 +7,7 @@ const route: Array<Route> = [
     method: 'GET',
     handler: timesheetController,
     options: {
+      auth: 'simple',
       tags: ['api'],
       description: 'get, all timesheets for an employee that have been captured in the system',
       notes: 'Returns an array of timesheets',
@@ -17,6 +18,7 @@ const route: Array<Route> = [
     method: 'POST',
     handler: timesheetController,
     options: {
+      auth: 'simple',
       payload: {
         output: 'stream',
         parse: true,

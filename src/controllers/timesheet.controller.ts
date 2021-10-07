@@ -9,7 +9,7 @@ const timesheetController = async (request: Request, h: ResponseToolkit): Promis
   switch (request.method) {
     case 'get': {
       const timesheets = await GetTimesheets(pfNumber).then((results) => results);
-      return h.response(response(!timesheets.length ? 500 : 200, timesheets));
+      return h.response(response(!timesheets.length ? 500 : 200, timesheets)).code(!timesheets.length ? 500 : 200);
     }
 
     case 'post': {
@@ -17,7 +17,7 @@ const timesheetController = async (request: Request, h: ResponseToolkit): Promis
         (result) => result,
         (error) => error,
       );
-      return h.response(response(results.errno ? 500 : 200, results));
+      return h.response(response(results.errno ? 500 : 200, results)).code(results.errno ? 500 : 200);
     }
     default:
       return h.response(response(404, 'Not found'));
