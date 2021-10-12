@@ -6,7 +6,6 @@ const route: Route = {
   method: 'GET',
   handler: reportController,
   options: {
-    auth: 'simple',
     tags: ['api'],
     description: 'get, all reports',
     notes: 'Returns an array of reports',

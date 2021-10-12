@@ -6,7 +6,6 @@ const route: Route = {
   method: 'GET',
   handler: programController,
   options: {
-    auth: 'simple',
   }
 };
 

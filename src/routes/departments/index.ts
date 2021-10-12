@@ -6,7 +6,6 @@ const route: Route = {
   method: 'GET',
   handler: departmentController,
   options: {
-    auth:'simple',
     tags: ['api'],
     description: 'get, all departments that have been captured in the system',
     notes: 'Returns an array of departments',

@@ -6,7 +6,6 @@ const route: Route = {
   method: 'GET',
   handler: projectController,
   options: {
-    auth:'simple',
     tags: ['api'],
     description: 'get, all projects that have been captured in the system',
     notes: 'Returns an array of projects',

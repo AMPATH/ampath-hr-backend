@@ -6,7 +6,6 @@ const route: Route = {
   method: 'GET',
   handler: indexController,
   options: {
-    auth: 'simple',
   }
 };
 

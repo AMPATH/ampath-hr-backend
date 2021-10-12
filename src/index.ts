@@ -12,9 +12,9 @@ const options: ServerOptions = {
 
 
 const validate = async (artifacts, request, h) => ({
-    isValid: true,
-    credentials: { user: artifacts.decoded.payload.user }
-  });
+  isValid: true,
+  credentials: { user: artifacts.decoded.payload.user }
+});
 const server = new Server(options);
 
 export const init = async (): Promise<Server> => {
@@ -34,6 +34,7 @@ export const init = async (): Promise<Server> => {
     },
     validate
   })
+  server.auth.default('simple')
   await server.route(routes);
 
   return server;

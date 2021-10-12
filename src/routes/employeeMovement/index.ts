@@ -7,7 +7,6 @@ const route: Array<Route> = [
     method: 'GET',
     handler: employeeMovementController,
     options: {
-      auth: 'simple',
       tags: ['api'],
       description: 'get, latest movements of all employees that have been captured in the system',
       notes: 'Returns an array of employees',
@@ -18,7 +17,6 @@ const route: Array<Route> = [
     method: 'POST',
     handler: employeeMovementController,
     options: {
-      auth: 'simple',
       tags: ['api'],
       description: 'post, create an employee to stored in the database',
       notes: `Request body, an example below

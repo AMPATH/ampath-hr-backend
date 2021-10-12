@@ -19,7 +19,7 @@ const userController = async (request: Request, h: ResponseToolkit): Promise<any
         }, process.env.SECRET_KEY
       )
       const user = await GetUser(userName, pass).then((results) => results);
-      return h.response(response(!user.length ? 500 : 200, !user.length ? [] : { token, user },))
+      return h.response(response(!user.length ? 500 : 200, !user.length ? [] : { token, user }))
         .code(!user.length ? 500 : 200);
 
 

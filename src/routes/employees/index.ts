@@ -8,7 +8,6 @@ const route: Array<Route> = [
     method: 'GET',
     handler: employeeController,
     options: {
-      auth: 'simple',
       tags: ['api'],
       description: 'get, all employees that have been captured in the system',
       notes: 'Returns an array of employees',
@@ -19,7 +18,6 @@ const route: Array<Route> = [
     method: 'POST',
     handler: employeeController,
     options: {
-      auth: 'simple',
       tags: ['api'],
       description: 'post, create an employee to stored in the database',
       notes: `Request body, an example below
@@ -48,7 +46,6 @@ const route: Array<Route> = [
     method: 'PUT',
     handler: employeeController,
     options: {
-      auth: 'simple',
       tags: ['api'],
       description: 'put, edit an employee stored in the database',
       notes: `Request body, an example below
@@ -77,7 +74,6 @@ const route: Array<Route> = [
     method: 'GET',
     handler: searchController,
     options: {
-      auth: 'simple',
       tags: ['api'],
       description: 'get, one employee as per the PfNumber as captured in the system',
       notes: 'Returns one Employee',
