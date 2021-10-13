@@ -1,5 +1,6 @@
 import { Route } from '../../config/interfaces';
 import timesheetController from '../../controllers/timesheet.controller';
+import singleTimesheetController from '../../controllers/singleTimesheet.controller';
 
 const route: Array<Route> = [
   {
@@ -34,6 +35,17 @@ const route: Array<Route> = [
                 
             }
             `,
+    },
+  },
+  {
+    path: '/image',
+    method: 'GET',
+    handler: singleTimesheetController,
+    options: {
+      tags: ['api'],
+      // eslint-disable-next-line max-len
+      description: 'get, all images(timesheets) for an employee that have been captured in the system, stores it in uploads folder',
+      notes: 'Returns an array of timesheets',
     },
   },
 ];
