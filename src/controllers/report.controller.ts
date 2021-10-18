@@ -8,9 +8,9 @@ const reportController = async (request: Request, h: ResponseToolkit): Promise<a
   const sites = request.query.site ? JSON.stringify(request.query.site) : null;
   const countyBudget = request.query.budget ? JSON.stringify(request.query.budget) : null;
   const prog = request.query.program ? JSON.stringify(request.query.program) : null;
-  const Empstatus = request.query.status ? JSON.stringify(request.query.status) : null;
+  const employeeStatus = request.query.status ? JSON.stringify(request.query.status) : null;
   const countyGovt = request.query.county ? JSON.stringify(request.query.county) : null;
-  const report = await Reports(departments, proj, sites, countyBudget, countyGovt, Empstatus, prog).then(
+  const report = await Reports(departments, proj, sites, countyBudget, countyGovt, employeeStatus, prog).then(
     (results) => results,
   );
   return h.response(response(200, report));

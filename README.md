@@ -26,6 +26,7 @@ This is Ampath HR Back end
             DATABASE=
             CONNECTION_LIMIT=
             PORT=
+           SECRET_KEY=
         ```
 
 To start the server
@@ -36,7 +37,10 @@ To start the server
 
     -   API endpoint base URL http://localhost:3000
 
- 2. Documentation
+ 2. Create a folder 'uploads' at the root level
+
+
+ 3. Documentation
 
     -   Documentation runs on [http://localhost:3000/documentation](http://localhost:3000/documentation)
 

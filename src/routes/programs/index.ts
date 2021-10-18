@@ -5,6 +5,8 @@ const route: Route = {
   path: '/program',
   method: 'GET',
   handler: programController,
+  options: {
+  }
 };
 
 export default route;

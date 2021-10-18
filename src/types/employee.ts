@@ -45,9 +45,9 @@ export interface EmployeeUpdate {
   salutation: string;
 }
 export interface TimesheetsUpdate {
-  pfNumber: Number;
+  pfNumber: string;
   month: string;
-  upload: string;
+  upload: any;
 }
 export interface FindReport {
   department: string;

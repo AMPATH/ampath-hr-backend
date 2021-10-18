@@ -11,13 +11,13 @@ export function recentMovement(): Promise<any> {
       date_format(ER.endOfContract, "%Y-%m-%d") as contractPeriod,
       D.name as department, S.name as site
       from Employees E
-      join Employee_Tracking ER on E.pfNumber = ER.pfNumber
+        join Employee_Tracking ER on E.pfNumber = ER.pfNumber
       join Department D on ER.department = D.departmentId
       join Site S on ER.site = S.siteId
       join County C on ER.county = C.countyId
       join Budget B on ER.countyBudget = B.budgetId
       join Program Prog on ER.programArea = Prog.programId
-      join Project P on ER.project = P.projectId GROUP BY pfNumber desc`, (error, results, fields) => {
+      join Project P on ER.project = P.projectId group by pfNumber desc`, (error, results, fields) => {
         if (error) reject(error);
         resolve(results);
       });

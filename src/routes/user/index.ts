@@ -7,6 +7,7 @@ const route: Array<Route> = [
     method: 'GET',
     handler: userController,
     options: {
+      auth: false,
       tags: ['api'],
       description: 'get, user that has been captured in the system',
       notes: 'Returns a user',
@@ -17,6 +18,7 @@ const route: Array<Route> = [
     method: 'POST',
     handler: userController,
     options: {
+      auth: false,
       tags: ['api'],
       description: 'post, create a user to stored in the database',
       notes: `Request body, an example below

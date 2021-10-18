@@ -5,6 +5,8 @@ const route: Route = {
   path: '/',
   method: 'GET',
   handler: indexController,
+  options: {
+  }
 };
 
 export default route;
