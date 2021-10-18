@@ -17,4 +17,3 @@ const singleTimesheetController = async (request: Request, h): Promise<any> => {
   }
 };
 export default singleTimesheetController;
-
