@@ -4,13 +4,13 @@ function GetEmployee(pfNumber): Promise<any> {
   const sql = `select E.pfNumber, E.firstName, E.middleName, E.lastName, E.idNumber, E.gender, E.age,
   date_format(E.dob, "%Y-%m-%d") as dateOfBirth, 
   E.telephone, E.email, E.kraPin, E.nhif, E.nssf, E.salutation,
-  C.name as County, B.name as Budget,
-  Prog.name as "ProgramArea", P.name as Project,
+  C.name as County, C.countyId, B.name as Budget, B.budgetId,
+  Prog.name as "ProgramArea", Prog.programId, P.name as Project, P.projectId,
   ET.contractStatus ,date_format(ET.endOfContract,"%Y-%m-%d") as endOfContract ,
   date_format(ET.dateOfJoining, "%Y-%m-%d") as dateOfJoining , 
   date_format(ET.dateOfLeaving, "%Y-%m-%d") as dateOfLeaving , ET.changed, ET.jobSpecification,
   date_format(ET.date,"%Y-%m-%d") as date,
-  D.name as Department, S.name as Site
+  D.name as Department, D.departmentId, S.name as Site, S.siteId
   from Employees E
   left join Employee_Tracking ET on E.pfNumber = ET.pfNumber
   left join Department D on ET.department = D.departmentId

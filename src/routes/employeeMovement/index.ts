@@ -18,7 +18,6 @@ const route: Array<Route> = [
     method: 'POST',
     handler: employeeMovementController,
     options: {
-      auth: 'simple',
       tags: ['api'],
       description: 'post, create an employee to stored in the database',
       notes: `Request body, an example below
