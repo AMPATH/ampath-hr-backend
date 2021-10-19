@@ -26,6 +26,7 @@ This is Ampath HR Back end
             DATABASE=
             CONNECTION_LIMIT=
             PORT=
+           SECRET_KEY=
         ```
 
 To start the server
