@@ -63,3 +63,14 @@ export interface UserDetails {
   email: string;
   password: string;
 }
+export interface BudgetDetails {
+  name: string;
+  county: number;
+  mflCode: string | number;
+}
+export interface UpdateBudgetDetails {
+  name: string;
+  county: number;
+  mflCode: string | number;
+  budgetId: number
+}
