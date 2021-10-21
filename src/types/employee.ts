@@ -74,3 +74,7 @@ export interface UpdateBudgetDetails {
   mflCode: string | number;
   budgetId: number
 }
+export interface CountyDetails{
+  name: string;
+  countyId: number;
+}
