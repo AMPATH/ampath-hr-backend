@@ -8,14 +8,14 @@ export function allEmployeesDetails(): Promise<any> {
   ER.contractStatus as employeeStatus, ER.jobSpecification, C.name as county, B.name as budget,
   Prog.name as programArea, P.name as project,
   ER.endOfContract as contractPeriod, D.name as department, S.name as site
-  from (select * from hr_db.Employee_Tracking group by pfNumber desc) as ER
-  right join hr_db.Employees E on E.pfNumber = ER.pfNumber
-  left join hr_db.Department D on ER.department = D.departmentId
-  left join hr_db.Site S on ER.site = S.siteId
-  left join hr_db.County C on ER.county = C.countyId
-  left join hr_db.Budget B on ER.countyBudget = B.budgetId
-  left join hr_db.Program Prog on ER.programArea = Prog.programId
-  left join hr_db.Project P on ER.project = P.projectId where ER.contractStatus='Active'`;
+  from (select * from Employee_Tracking group by pfNumber desc) as ER
+  left join Employees E on E.pfNumber = ER.pfNumber
+  left join Department D on ER.department = D.departmentId
+  left join Site S on ER.site = S.siteId
+  left join County C on ER.county = C.countyId
+  left join Budget B on ER.countyBudget = B.budgetId
+  left join Program Prog on ER.programArea = Prog.programId
+  left join Project P on ER.project = P.projectId where ER.contractStatus='Active'`;
   return new Promise((resolve, reject) => {
     serviceDef.dbConnection().then((pool: any) => {
       pool.query(sql, (error, results, fields) => {
