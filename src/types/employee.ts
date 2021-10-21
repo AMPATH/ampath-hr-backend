@@ -82,3 +82,4 @@ export interface DepartmentDetails {
   name: string;
   departmentId: number;
 }
+
