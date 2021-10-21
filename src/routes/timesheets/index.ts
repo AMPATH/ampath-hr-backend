@@ -50,6 +50,16 @@ const route: Array<Route> = [
       notes: 'Returns an array of timesheets',
     },
   },
+  {
+    path: '/delete',
+    method: 'DELETE',
+    handler: timesheetController,
+    options: {
+      tags: ['api'],
+      description: 'get, all timesheets for an employee that have been captured in the system',
+      notes: 'Returns an array of timesheets',
+    },
+  },
 ];
 
 export default route;
