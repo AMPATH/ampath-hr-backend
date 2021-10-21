@@ -15,7 +15,7 @@ export default [].concat(
   indexRoute,
   ...budgetRoute,
   ...countyRoute,
-  departmentRoute,
+  ...departmentRoute,
   programRoute,
   projectRoute,
   siteRoute,

@@ -74,7 +74,11 @@ export interface UpdateBudgetDetails {
   mflCode: string | number;
   budgetId: number
 }
-export interface CountyDetails{
+export interface CountyDetails {
   name: string;
   countyId: number;
+}
+export interface DepartmentDetails {
+  name: string;
+  departmentId: number;
 }
