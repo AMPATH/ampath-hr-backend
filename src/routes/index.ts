@@ -13,9 +13,9 @@ import reportRoute from './reports';
 
 export default [].concat(
   indexRoute,
-  budgetRoute,
-  countyRoute,
-  departmentRoute,
+  ...budgetRoute,
+  ...countyRoute,
+  ...departmentRoute,
   programRoute,
   projectRoute,
   siteRoute,
