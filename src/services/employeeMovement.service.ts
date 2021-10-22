@@ -28,6 +28,18 @@ export function recentMovement(): Promise<any> {
   });
 }
 
+export function employeeTrackMovement(pfNumber): Promise<any> {
+  const sql = `select * from Employee_Tracking where pfNumber='${pfNumber}' order by trackingId DESC`;
+  return new Promise((resolve, reject) => {
+    serviceDef.dbConnection().then((pool: any) => {
+      pool.query(sql, (error,results,fields) => {
+        if(error) reject(error);
+        resolve(results);
+      })
+    });
+  });
+}
+
 function EmployeeMovement(employeeMovement: EmployeeMovements) {
   const {
     pfNumber,
