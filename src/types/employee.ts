@@ -82,4 +82,8 @@ export interface DepartmentDetails {
   name: string;
   departmentId: number;
 }
-
+export interface ProgramDetails {
+  name: string;
+  programId?: number;
+  budget: number;
+}
