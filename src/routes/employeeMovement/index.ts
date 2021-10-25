@@ -1,4 +1,5 @@
 import employeeMovementController from '../../controllers/employeeMovement.controller';
+import employeeTrackController from '../../controllers/employeeTrack.controller';
 import { Route } from '../../config/interfaces';
 
 const route: Array<Route> = [
@@ -38,6 +39,16 @@ const route: Array<Route> = [
     }
     `,
     },
+  }, 
+  {
+    path: '/trackmovement',
+    method: 'GET',
+    handler: employeeTrackController,
+    options: {
+      tags: ['api'],
+      description: 'get, track movements of an employee that has been captured in the system',
+      notes: 'Returns an array of employee movements',
+    }
   }];
 
 export default route;

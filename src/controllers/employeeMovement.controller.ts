@@ -1,7 +1,7 @@
 import { Request, ResponseToolkit } from '@hapi/hapi';
 import response from '../utils/response';
 import { EmployeeMovements } from '../types/employee';
-import EmployeeMovement, { recentMovement } from '../services/employeeMovement.service';
+import {EmployeeMovement, recentMovement } from '../services/employeeMovement.service';
 
 const employeeMovementController = async (request: Request, h: ResponseToolkit): Promise<any> => {
   switch (request.method) {
