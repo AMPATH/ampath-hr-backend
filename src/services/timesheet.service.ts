@@ -59,3 +59,14 @@ export function GetSingleTimesheet(filename) {
     return stream;
   }
 }
+
+export function deleteTimesheet(timesheetId): Promise<any> {
+  return new Promise((resolve, reject) => {
+    serviceDef.dbConnection().then((pool: any) => {
+      pool.query(`delete from Timesheets where timesheetsId= '${timesheetId}'`, (error, results, fields) => {
+        if (error) reject(error);
+        resolve(results);
+      });
+    });
+  });
+}

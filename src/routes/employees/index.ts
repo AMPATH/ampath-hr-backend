@@ -1,6 +1,7 @@
 import { Route } from '../../config/interfaces';
 import employeeController from '../../controllers/employee.controller';
 import searchController from '../../controllers/search.controller';
+import employeeRegistrationController from '../../controllers/employeeRegistrationData.controller';
 
 const route: Array<Route> = [
   {
@@ -83,6 +84,16 @@ const route: Array<Route> = [
       notes: 'Returns one Employee',
     },
   },
+  {
+    path: '/employeeregistration',
+    method: 'GET',
+    handler: employeeRegistrationController,
+    options: {
+      tags: ['api'],
+      description: 'get, registration details of a given employee',
+      notes: 'Returns one Employee'
+    }
+  }
 ];
 
 export default route;

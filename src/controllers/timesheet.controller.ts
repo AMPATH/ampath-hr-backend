@@ -1,10 +1,11 @@
 import { Request, ResponseToolkit } from '@hapi/hapi';
 import { TimesheetsUpdate } from '../types/employee';
 import response from '../utils/response';
-import { AddTimesheets, GetTimesheets } from '../services/timesheet.service';
+import { AddTimesheets, deleteTimesheet, GetTimesheets } from '../services/timesheet.service';
 
 const timesheetController = async (request: Request, h: ResponseToolkit): Promise<any> => {
   const pfNumber = request.query.pfnumber;
+  const timeSheetId = request.query.timesheetId;
 
   switch (request.method) {
     case 'get': {
@@ -14,6 +15,13 @@ const timesheetController = async (request: Request, h: ResponseToolkit): Promis
 
     case 'post': {
       const results: any = await AddTimesheets(request.payload as TimesheetsUpdate).then(
+        (result) => result,
+        (error) => error,
+      );
+      return h.response(response(results.errno ? 500 : 200, results)).code(results.errno ? 500 : 200);
+    }
+    case 'delete': {
+      const results: any = await deleteTimesheet(timeSheetId).then(
         (result) => result,
         (error) => error,
       );
