@@ -40,7 +40,7 @@ export function employeeTrackMovement(pfNumber): Promise<any> {
   });
 }
 
-function EmployeeMovement(employeeMovement: EmployeeMovements) {
+export function EmployeeMovement(employeeMovement: EmployeeMovements) {
   const {
     pfNumber,
     project,
@@ -66,5 +66,3 @@ function EmployeeMovement(employeeMovement: EmployeeMovements) {
     });
   });
 }
-
-export default EmployeeMovement;
