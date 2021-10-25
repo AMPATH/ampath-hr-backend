@@ -56,8 +56,11 @@ const route: Array<Route> = [
     handler: timesheetController,
     options: {
       tags: ['api'],
-      description: 'get, all timesheets for an employee that have been captured in the system',
-      notes: 'Returns an array of timesheets',
+      description: 'delete, a timesheets for an employee that have been captured in the system',
+      notes: `Request body, an example below',
+          {    
+              "timesheetId": "88"
+    }`,
     },
   },
 ];
