@@ -31,7 +31,7 @@ const route: Array<Route> = [{
   handler: projectController,
   options: {
     tags: ['api'],
-    description: 'post, Add projects that have been captured in the system using the project identification',
+    description: 'put, Edit projects that have been captured in the system using the project identification',
     notes: `Request body, an example below',
             {    
                 "name": "xyz"

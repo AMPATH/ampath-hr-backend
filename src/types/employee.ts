@@ -49,19 +49,11 @@ export interface TimesheetsUpdate {
   month: string;
   upload: any;
 }
-export interface FindReport {
-  department: string;
-  site: string;
-  project: string;
-  county: string;
-  budget: string;
-  program: string;
-  Empstatus: string;
-}
 export interface UserDetails {
   userName: string;
-  email: string;
-  password: string;
+  email?: string;
+  password?: string;
+  role?: string;
 }
 export interface BudgetDetails {
   name: string;
