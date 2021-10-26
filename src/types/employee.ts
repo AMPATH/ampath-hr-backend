@@ -91,3 +91,8 @@ export interface ProjectDetails {
   name: string;
   projectId?: number;
 }
+export interface SiteDetails {
+  name: string;
+  county: number;
+  siteId?: number;
+}
