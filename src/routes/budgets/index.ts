@@ -23,7 +23,7 @@ const route: Array<Route> = [{
             {
                 "name": "xyz",
                 "county": 6,
-                "MflCode": 864513
+                "mflCode": 864513
             }
             `,
   },
@@ -38,7 +38,7 @@ const route: Array<Route> = [{
           {
               "name": "xyz",
               "county": 6,
-              "MflCode": 864513,
+              "mflCode": 864513,
               "budgetId": 5
           }
           `,

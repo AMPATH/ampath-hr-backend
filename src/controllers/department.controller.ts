@@ -12,11 +12,11 @@ const departmentController = async (request: Request, h: ResponseToolkit): Promi
 
     case 'post': {
       const department: any = await AddDepartments(request.payload as DepartmentDetails).then((results) => results);
-      return h.response(response(!department.length ? 500 : 200, department)).code(!department.lenght ? 500 : 200)
+      return h.response(response(department.errno ? 500 : 200, department)).code(department.errno ? 500 : 200)
     }
     case 'put': {
       const department: any = await UpdateDepartments(request.payload as DepartmentDetails).then((results) => results);
-      return h.response(response(!department.length ? 500 : 200, department)).code(!department.lenght ? 500 : 200);
+      return h.response(response(department.errno ? 500 : 200, department)).code(department.errno ? 500 : 200);
     }
     default:
       return h.response(response(404, "Page Not Found"))
