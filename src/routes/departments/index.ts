@@ -21,8 +21,7 @@ const route: Array<Route> = [{
     notes: `Request body, an example below
 
             {
-                "name": "xyz",
-                "departmentId": 6
+                "name": "xyz"
             }
             `,
   },
