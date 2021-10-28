@@ -72,7 +72,7 @@ export interface CountyDetails {
 }
 export interface DepartmentDetails {
   name: string;
-  departmentId: number;
+  departmentId?: number;
 }
 export interface ProgramDetails {
   name: string;
