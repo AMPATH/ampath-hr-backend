@@ -11,11 +11,11 @@ const siteController = async (request: Request, h: ResponseToolkit): Promise<any
     }
     case 'post': {
       const addSite: any = await AddSites(request.payload as SiteDetails).then((results) => results);
-      return h.response(response(!addSite.length ? 500 : 200, addSite)).code(!addSite.length ? 500 : 200);
+      return h.response(response(addSite.errno ? 500 : 200, addSite)).code(addSite.errno ? 500 : 200);
     }
     case 'put': {
       const updateSite: any = await UpdateSites(request.payload as SiteDetails).then((results) => results);
-      return h.response(response(!updateSite.length ? 500 : 200, updateSite)).code(!updateSite.length ? 500 : 200);
+      return h.response(response(updateSite.errno ? 500 : 200, updateSite)).code(updateSite.errno ? 500 : 200);
     }
     default:
       return h.response(response(404, "Page Not Found"))
