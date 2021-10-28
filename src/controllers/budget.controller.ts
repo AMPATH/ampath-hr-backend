@@ -11,11 +11,11 @@ const budgetController = async (request: Request, h: ResponseToolkit): Promise<a
     }
     case 'post': {
       const budget: any = await AddBudgets(request.payload as BudgetDetails).then((results) => results);
-      return h.response(response(!budget.length ? 500 : 200, budget)).code(!budget.length ? 500 : 200);
+      return h.response(response(budget.errno ? 500 : 200, budget)).code(budget.errno ? 500 : 200);
     }
     case 'put': {
-      const budget: any = await UpdateBudget(request.payload as UpdateBudgetDetails).then((results)=> results );
-      return h.response(response(!budget.length ? 500 : 200, budget)).code(!budget.length ? 500 : 200);
+      const budget: any = await UpdateBudget(request.payload as UpdateBudgetDetails).then((results) => results);
+      return h.response(response(budget.errno ? 500 : 200, budget)).code(budget.errno ? 500 : 200);
     }
     default:
       return h.response(response(404, 'Not found'));

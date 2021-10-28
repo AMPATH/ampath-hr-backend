@@ -11,12 +11,12 @@ const projectController = async (request: Request, h: ResponseToolkit): Promise<
     }
     case 'post': {
       const addProject: any = await AddProjects(request.payload as ProjectDetails).then((results) => results);
-      return h.response(response(!addProject.length ? 500 : 200, addProject)).code(!addProject.length ? 500 : 200)
+      return h.response(response(addProject.errno ? 500 : 200, addProject)).code(addProject.errno ? 500 : 200)
     }
     case 'put': {
       const updateProject: any = await UpdateProjects(request.payload as ProjectDetails).then((results) => results);
-      return h.response(response(!updateProject.length ? 500 : 200, updateProject))
-        .code(!updateProject.length ? 500 : 200);
+      return h.response(response(updateProject.errno ? 500 : 200, updateProject))
+        .code(updateProject.errno ? 500 : 200);
     }
     default:
       return h.response(response(404, "Page Not Found"));
