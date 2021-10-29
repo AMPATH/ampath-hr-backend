@@ -13,8 +13,8 @@ export function Departments() {
   });
 }
 export function AddDepartments(departmentInfo: DepartmentDetails) {
-  const {departmentId, name} = departmentInfo
-  const sql = `Insert into Department (departmentId,name) values ('${departmentId}', '${name}')`;
+  const { name } = departmentInfo
+  const sql = `Insert into Department (name) values ('${name}')`;
   return new Promise((resolve, reject) => {
     serviceDef.dbConnection().then((pool: any) => {
       pool.query(sql, (error: any, results: any, fields: any) => {
@@ -25,7 +25,7 @@ export function AddDepartments(departmentInfo: DepartmentDetails) {
   });
 }
 export function UpdateDepartments(departmentInfo: DepartmentDetails) {
-  const {departmentId, name} = departmentInfo
+  const { departmentId, name } = departmentInfo
   const sql = `update Department set name ='${name}',
    departmentId = '${departmentId}' Where departmentId = '${departmentId}'`;
   return new Promise((resolve, reject) => {
