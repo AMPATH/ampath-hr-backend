@@ -3,7 +3,6 @@ import { UserDetails } from '../types/employee';
 import serviceDef from '../connection/connection';
 
 export function GetUser(userName, password): Promise<any> {
-
   const sql = `SELECT * FROM User WHERE userName = '${userName}'`;
   return new Promise((resolve, reject) => {
     serviceDef.dbConnection().then((pool: any) => {
@@ -32,7 +31,7 @@ export function AddUser(user: UserDetails) {
   });
 }
 export function AllUsersAndRoles(userName) {
-  const sql = `select id, userName, role from User where userName = '${userName}'`;
+  const sql = `select id, userName, role from User where userName like '${userName}%'`;
   return new Promise((resolve, reject) => {
     serviceDef.dbConnection().then((pool: any) => {
       pool.query(sql, (error: any, results: any, fields: any) => {
