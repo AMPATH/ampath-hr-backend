@@ -6,7 +6,6 @@ const route: Array<Route> = [{
   method: 'GET',
   handler: siteController,
   options: {
-    auth: 'simple',
     tags: ['api'],
     description: 'get, all sites that have been captured in the system',
     notes: 'Returns an array of sites',
