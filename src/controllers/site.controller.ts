@@ -1,9 +1,25 @@
 import { Request, ResponseToolkit } from '@hapi/hapi';
 import response from '../utils/response';
-import Sites from '../services/site.service';
+import { AddSites, Sites, UpdateSites } from '../services/site.service';
+import { SiteDetails } from '../types/employee';
 
 const siteController = async (request: Request, h: ResponseToolkit): Promise<any> => {
-  const site = await Sites().then((results) => results);
-  return h.response(response(200, site));
+  switch (request.method) {
+    case 'get': {
+      const site: any = await Sites().then((results) => results);
+      return h.response(response(!site.length ? 500 : 200, site)).code(!site.length ? 500 : 200);
+    }
+    case 'post': {
+      const addSite: any = await AddSites(request.payload as SiteDetails).then((results) => results);
+      return h.response(response(addSite.errno ? 500 : 200, addSite)).code(addSite.errno ? 500 : 200);
+    }
+    case 'put': {
+      const updateSite: any = await UpdateSites(request.payload as SiteDetails).then((results) => results);
+      return h.response(response(updateSite.errno ? 500 : 200, updateSite)).code(updateSite.errno ? 500 : 200);
+    }
+    default:
+      return h.response(response(404, "Page Not Found"))
+  }
+
 };
 export default siteController;

@@ -81,3 +81,15 @@ export function UpdateEmployee(employeeUpdate: EmployeeUpdate) {
     });
   });
 }
+
+export function getEmployeeRegistrationDetails(pfNumber): Promise<any> {
+  const sql = `SELECT * FROM Employees WHERE pfNumber='${pfNumber}'`;
+  return new Promise(( resolve,reject ) => {
+    serviceDef.dbConnection().then((pool: any) => {
+      pool.query(sql, (error,results,fields) => {
+        if(error) reject(error);
+        resolve(results);
+      })
+    });
+  });
+}

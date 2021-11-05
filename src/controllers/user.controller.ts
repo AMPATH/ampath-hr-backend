@@ -1,12 +1,13 @@
 import { Request, ResponseToolkit } from '@hapi/hapi';
 import * as jwt from 'jsonwebtoken';
+import * as bcrypt from 'bcrypt';
 import { UserDetails } from '../types/employee';
 import response from '../utils/response';
-import { AddUser, GetUser } from '../services/user.service';
+import { AddUser, GetUser, UpdateUserRoles } from '../services/user.service';
 
 const userController = async (request: Request, h: ResponseToolkit): Promise<any> => {
   const userName = request.query.user;
-  const pass = request.query.password
+  const pass: any = request.query.password
   switch (request.method) {
     case 'get': {
       const token = jwt.sign(
@@ -18,20 +19,31 @@ const userController = async (request: Request, h: ResponseToolkit): Promise<any
           timeSkewSec: 15
         }, process.env.SECRET_KEY
       )
+
       const user = await GetUser(userName, pass).then((results) => results);
-      return h.response(response(!user.length ? 500 : 200, !user.length ? [] : { token, user }))
+      const valid = bcrypt.compareSync(pass, user[0].password)
+      const results = { ...user[0] };
+      delete results.password;
+      delete results.id;
+     
+
+      return h.response(response(!valid ? 500 : 200, !valid ? "Wrong Username or Password" : { token, results }))
         .code(!user.length ? 500 : 200);
-
-
     }
     case 'post': {
-      const update: any = await AddUser(request.payload as UserDetails).then(
+      const addUser: any = await AddUser(request.payload as UserDetails).then(
         (result) => result,
         (error) => error,
       );
-      return h.response(response(update.errno ? 500 : 200, update));
+      return h.response(response(addUser.errno ? 500 : 200, addUser));
     }
-
+    case 'put': {
+      const updateUser: any = await UpdateUserRoles(request.payload as UserDetails).then(
+        (results) => results,
+        (error) => error,
+      );
+      return h.response(response(updateUser.errno ? 500 : 200, updateUser)).code(updateUser.errno ? 500 : 200)
+    }
     default:
       return h.response(response(404, 'Not found'));
   }

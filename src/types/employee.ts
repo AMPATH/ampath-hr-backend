@@ -49,17 +49,42 @@ export interface TimesheetsUpdate {
   month: string;
   upload: any;
 }
-export interface FindReport {
-  department: string;
-  site: string;
-  project: string;
-  county: string;
-  budget: string;
-  program: string;
-  Empstatus: string;
-}
 export interface UserDetails {
   userName: string;
-  email: string;
-  password: string;
+  email?: string;
+  password?: string;
+  role?: string;
+}
+export interface BudgetDetails {
+  name: string;
+  county: number;
+  mflCode: string | number;
+}
+export interface UpdateBudgetDetails {
+  name: string;
+  county: number;
+  mflCode: string | number;
+  budgetId: number
+}
+export interface CountyDetails {
+  name: string;
+  countyId: number;
+}
+export interface DepartmentDetails {
+  name: string;
+  departmentId?: number;
+}
+export interface ProgramDetails {
+  name: string;
+  programId?: number;
+  budget: number;
+}
+export interface ProjectDetails {
+  name: string;
+  projectId?: number;
+}
+export interface SiteDetails {
+  name: string;
+  county: number;
+  siteId?: number;
 }
