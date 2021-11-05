@@ -8,6 +8,7 @@ const route: Array<Route> = [
     method: 'GET',
     handler: employeeMovementController,
     options: {
+      auth: 'simple',
       tags: ['api'],
       description: 'get, latest movements of all employees that have been captured in the system',
       notes: 'Returns an array of employees',

@@ -6,6 +6,7 @@ const route: Array<Route> = [{
   method: 'GET',
   handler: countyController,
   options: {
+    auth:'simple',
     tags: ['api'],
     description: 'get, all counties that have been captured in the system',
     notes: 'Returns an array of counties',
