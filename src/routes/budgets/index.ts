@@ -6,7 +6,6 @@ const route: Array<Route> = [{
   method: 'GET',
   handler: budgetController,
   options: {
-    auth:'simple',
     tags: ['api'],
     description: 'get, all budgets that have been captured in the system',
     notes: 'Returns an array of budgets',
