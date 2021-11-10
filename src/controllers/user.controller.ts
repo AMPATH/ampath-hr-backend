@@ -1,6 +1,6 @@
 import { Request, ResponseToolkit } from '@hapi/hapi';
 import * as jwt from 'jsonwebtoken';
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 import { UserDetails } from '../types/employee';
 import response from '../utils/response';
 import { AddUser, GetUser, UpdateUserRoles } from '../services/user.service';

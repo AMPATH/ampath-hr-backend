@@ -1,5 +1,4 @@
 import { Server, ServerOptions } from '@hapi/hapi';
-import bcrypt from 'bcrypt';
 import * as dotenv from 'dotenv';
 import routes from './routes';
 import plugins from './config/plugins';
