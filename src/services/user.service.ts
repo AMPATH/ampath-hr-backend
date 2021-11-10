@@ -1,4 +1,4 @@
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 import { UserDetails } from '../types/employee';
 import serviceDef from '../connection/connection';
 
